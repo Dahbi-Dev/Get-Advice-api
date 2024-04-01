@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Message from './Message';
 
 const App = () => {
     // State variable to hold the advice
@@ -12,7 +13,7 @@ const App = () => {
             const res = await fetch("https://api.adviceslip.com/advice")
             const data = await res.json();
             setAdvice(data.slip.advice)
-            setCount(count+1)
+            setCount((c)=> c+1)
         } catch (error) {
             // Handling errors during fetching
             console.error('Error fetching advice:', error);
@@ -21,6 +22,9 @@ const App = () => {
         }
     }
 
+    useEffect(()=>{
+        getAdvice();
+    },[])
 
 
     return (
@@ -30,9 +34,9 @@ const App = () => {
             <button
                 style={{ border: '  solid 1px', cursor: 'pointer',
                  backgroundColor: '#393', color: 'white', fontSize: '16px' }}
-                onClick={getAdvice } >Get Advice</button>
+                onClick={getAdvice} >Get Advice</button>
+            <Message  count={count}/>
 
-                <p>you have read <strong style={{color:'#393'}}>{count} </strong>peaces of advice <strong>Today</strong></p>
         </div>
     );
 }
