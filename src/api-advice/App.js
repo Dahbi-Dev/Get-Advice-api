@@ -31,7 +31,7 @@ const App = () => {
     return (
         <div style={{ textAlign: 'center', padding: '50px', border: '3px solid #322' }}>
             <h1>Get your Daily Advices : </h1>
-            <p style={{ color: 'blue', margin: '50px', fontSize: '22px' }}>{advice}</p>
+            <p style={{textAlign:'start', color: 'blue', margin: '50px', fontSize: '22px' }}>{advice}</p>
             {loading && (
                 <div style={{ paddingBottom: '30px', position: 'absolute', left: '50%', transform: 'translate(-50%, -50%)' }}>
                     <ReactLoading type="spin" color="#393" height={30} width={30} />
