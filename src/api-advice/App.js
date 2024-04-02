@@ -39,7 +39,8 @@ const App = () => {
             )}
             {buttonVisible && (
                 <button
-                    style={{ border: '  solid 1px', cursor: 'pointer',
+                    style={{ border: '  solid 1px',borderRadius:'7px'
+                           ,cursor: 'pointer',
                         backgroundColor: '#393', color: 'white', fontSize: '16px' }}
                     onClick={getAdvice}>Get Advice</button>
             )}
