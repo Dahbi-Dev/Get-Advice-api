@@ -33,7 +33,7 @@ const App = () => {
             <h1>Get your Daily Advices : </h1>
             <p style={{color: 'blue', margin: '50px', fontSize: '24px' }}>{advice}</p>
             {loading && (
-                <div style={{ paddingBottom: '30px', position: 'absolute', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                <div style={{ padding: '15px 30px', position: 'absolute', left: '50%', transform: 'translate(-50%, -50%)' }}>
                     <ReactLoading type="spin" color="#393" height={50} width={50} />
                 </div>
             )}
